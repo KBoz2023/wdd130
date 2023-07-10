@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/designs.css">
+    <style>
+    form {
+        /* Center the form on the page */
+        margin: 0 auto;
+        width: 400px;
+        /* Form outline */
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      form li + li {
+        margin-top: 1em;
+      }
+      
+      label {
+        /* Uniform size & alignment */
+        display: inline-block;
+        width: 90px;
+        text-align: right;
+      }
+      
+      input,
+      textarea {
+        /* To make sure that all text fields have the same font settings
+           By default, textareas have a monospace font */
+        font: 1em sans-serif;
+      
+        /* Uniform text field size */
+        width: 300px;
+        box-sizing: border-box;
+      
+        /* Match form field borders */
+        border: 1px solid #999;
+      }
+      
+      input:focus,
+      textarea:focus {
+        /* Additional highlight for focused elements */
+        border-color: #000;
+      }
+      
+      textarea {
+        /* Align multiline text fields with their labels */
+        vertical-align: top;
+      
+        /* Provide space to type some text */
+        height: 5em;
+      }
+      
+      .button {
+        /* Align buttons with the text fields */
+        padding-left: 90px; /* same size as the label elements */
+      }
+      
+      button {
+        /* This extra margin represent roughly the same space as the space
+           between the labels and their text fields */
+        margin-left: 0.5em;
+      }
+        </style>
+    
+</head>
+<body>
+    <header>
+        <img class='hero' src="images/XP Living Logo.JPEG" alt="Logo" style='height:100%; width:100%;'>
+        <h1>Take on the world and live the experience</h1>
+        <nav class="nav_bar">
+             <a href="index.html">Home</a>
+             <a href="designs.html">Designs</a>
+             <a href="ourmission.html">Our Mission</a>
+             <a href="about_us.html">About Us</a>
+     
+        </nav>
+         </header>
+
+    <div class="designs">
+    <img class="design1" src="images/XP_living_beanie_blue.jpg" alt="place_holder">
+    <img class= design2 src="images/Xp_lving_hat_black_white.jpg" alt="place_holder">
+    <img class = design3 src="images/Xp_living_t-shirt.jpg" alt="place_holder">
+    </div>
+    <div id ="feedback"></div>
+
+
+
+
+    <h1>want to get into contact with us about one of our designs? send us a message!</h1>
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+          <li>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+          </li>
+          <li>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+          </li>
+          <li>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+          </li>
+        </ul>
+        <li class="button">
+            <button type="submit">Send your message</button>
+          </li>
+      </form>
+     
+
+    <!-- java script is case sensitive -->
+    <script>
+        // get the feedback div element so we can do something with it.
+        const feedbackElement = document.getElementById('feedback');
+        // get the form so we can read what was entered in it.
+        const formElement = document.forms[0];
+        // looks at the dom and tracks all the form tags
+        // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+        formElement.addEventListener('submit', function(e) {
+            // stop the form from doing the default action.
+            // when event happens do this action
+            e.preventDefault();
+            // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+            feedbackElement.innerHTML = 'Hello '+ formElement.user_name.value +'! Thank you for your message. We will get back with you as soon as possible!';
+            // make the feedback element visible.
+            feedbackElement.style.display = "block";
+            // add a class to move everything down so our message doesn't cover it.
+            document.body.classList.toggle('moveDown');
+            // changes the css to moveDown set
+        });
+    </script>
+        <nav class="nav_social">
+        <a class = "social"  href="https://www.facebook.com/profile.php?id=100083218638053" target="_blank"><img src="images/facebook.png" alt="Check out our facebook"></a></Li>
+        <a class= "social" href="https://www.youtube.com/@xpliving7009/featured" target="_blank"><img src="images/Youtube.jpg" alt="Check out our youtube"></a></li>
+        <a class = "social" href=https://www.twitch.tv/xp_living target=_blank><img src="images/twitch.jpg" alt="Check out our twitch"></a></li>
+        <a class = "social" href="https://twitter.com/XP_Living" target="_blank"><img src="images/twitter.png" alt="Check out our twitter"></a></li>
+        <a class = "social" href="https://www.instagram.com/xp_living/" target="_blank"><img src="images/instagram.png" alt="Check out our instagram"></a></li>
+        </nav>
+
+</body>
+</html>
